@@ -11,10 +11,6 @@ export default function PendingUsersPage() {
   const [loading, setLoading] = useState(true);
   const [processingId, setProcessingId] = useState<number | null>(null);
 
-  useEffect(() => {
-    fetchPendingUsers();
-  }, []);
-
   const fetchPendingUsers = async () => {
     setLoading(true);
     const response = await api.getPendingUsers();
@@ -77,6 +73,10 @@ export default function PendingUsersPage() {
     return colors[role as keyof typeof colors] || "bg-gray-500/20 text-gray-400";
   };
 
+  useEffect(() => {
+    fetchPendingUsers();
+  }, []);
+
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
@@ -98,7 +98,7 @@ export default function PendingUsersPage() {
             Utilisateurs en attente
           </h1>
           <p className="text-gray-400 mt-1">
-            {users.length} demande{users.length !== 1 ? "s" : ""} d'inscription en attente
+            {users.length} demande{users.length !== 1 ? "s" : ""} {"d'inscription en attente"}
           </p>
         </div>
       </div>
@@ -119,7 +119,7 @@ export default function PendingUsersPage() {
               <div className="flex items-start justify-between">
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+                    <div className="w-12 h-12 bg-linear-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
                       <User className="text-white" size={24} />
                     </div>
                     <div>

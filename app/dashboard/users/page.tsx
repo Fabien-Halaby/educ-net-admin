@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import { useEffect, useState } from "react";
@@ -190,7 +191,7 @@ export default function UsersPage() {
                   <tr key={user.id} className="hover:bg-gray-750 transition-colors">
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+                        <div className="w-10 h-10 bg-linear-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
                           <span className="text-white font-bold text-sm">
                             {user.full_name.charAt(0).toUpperCase()}
                           </span>

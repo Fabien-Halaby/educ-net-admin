@@ -71,7 +71,7 @@ export default function Sidebar() {
         <div className="flex flex-col h-full">
           <div className="p-6 border-b border-gray-800">
             <Link href="/dashboard" className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-linear-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center">
                 <School className="text-white" size={24} />
               </div>
               <div>
@@ -83,7 +83,7 @@ export default function Sidebar() {
 
           <div className="p-4 border-b border-gray-800">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-linear-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center">
                 <span className="text-white font-bold text-sm">
                   {user?.full_name?.charAt(0).toUpperCase() || "A"}
                 </span>
@@ -110,7 +110,7 @@ export default function Sidebar() {
                       onClick={() => setIsOpen(false)}
                       className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
                         isActive
-                          ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
+                          ? "bg-linear-to-r from-blue-600 to-purple-600 text-white shadow-lg"
                           : "text-gray-400 hover:bg-gray-800 hover:text-white"
                       }`}
                     >
